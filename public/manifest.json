@@ -1,0 +1,153 @@
+{
+  "name": "FLKRD Movies - Premium Movie Streaming",
+  "short_name": "FLKRD Movies",
+  "description": "Premium movie streaming and discovery app with advanced tracking, content filtering, and personalized recommendations. Created by Zana Faroq, powered by FLKRD STUDIO.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#e50914",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["entertainment", "lifestyle", "movies", "streaming"],
+  "screenshots": [
+    {
+      "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/large-social-media-sharing-banner-for-fl-f9439df6-20250905082549.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "FLKRD Movies - Premium streaming experience with movie discovery"
+    }
+  ],
+  "icons": [
+    {
+      "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/simple-favicon-icon-for-flkrd-movies-app-6cab667f-20250905082450.jpg",
+      "sizes": "32x32",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg",
+      "sizes": "72x72",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg",
+      "sizes": "96x96",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg",
+      "sizes": "128x128",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg",
+      "sizes": "144x144",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg",
+      "sizes": "152x152",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg",
+      "sizes": "384x384",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Search Movies",
+      "short_name": "Search",
+      "description": "Search for movies and TV shows",
+      "url": "/?route=search",
+      "icons": [
+        {
+          "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg",
+          "sizes": "96x96",
+          "type": "image/jpeg"
+        }
+      ]
+    },
+    {
+      "name": "My Favorites",
+      "short_name": "Favorites",
+      "description": "View your saved favorites and watchlist",
+      "url": "/?route=watchlist",
+      "icons": [
+        {
+          "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg",
+          "sizes": "96x96",
+          "type": "image/jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Profile",
+      "short_name": "Profile",
+      "description": "View your profile and movie stats",
+      "url": "/?route=profile",
+      "icons": [
+        {
+          "src": "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg",
+          "sizes": "96x96",
+          "type": "image/jpeg"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "file_handlers": [
+    {
+      "action": "/",
+      "accept": {
+        "video/*": [".mp4", ".webm", ".ogg"],
+        "audio/*": [".mp3", ".wav", ".ogg"]
+      }
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "flkrd",
+      "url": "/?protocol=%s"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui", "browser"]
+}

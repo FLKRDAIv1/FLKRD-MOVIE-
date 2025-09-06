@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1756582003720,
+      "tag": "0000_fair_jack_murdock",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1756582053929,
+      "tag": "0001_majestic_demogoblin",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1756666139463,
+      "tag": "0002_nice_sinister_six",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1757051252276,
+      "tag": "0003_mixed_blonde_phantom",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1757051500694,
+      "tag": "0004_great_shape",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+import { NextRequest, NextResponse } from 'next/server';
+
+// Sample Kurdish Sorani subtitles for popular movies
+const sampleSubtitles: Record<string, string[]> = {
+  '550': [ // Fight Club
+    '00:00:01.000 --> 00:00:04.000\nمن ناتوانم خەو ببینم.',
+    '00:00:05.000 --> 00:00:08.000\nهەموو شەوێک خەونەکانم تووشی کابوس دەبن.',
+    '00:00:10.000 --> 00:00:14.000\nژیانی من وەک نووسینگەیەکی بێ کۆتایی بوو.',
+    '00:00:15.000 --> 00:00:18.000\nهەتا ئەو ڕۆژەی کە تایلەر دورڈینم بینی.',
+    '00:00:20.000 --> 00:00:24.000\nئەو یەکەم کەس بوو کە ڕاستییەکانی ژیانی پێ گوتم.',
+  ],
+  '238': [ // The Godfather
+    '00:00:01.000 --> 00:00:05.000\nباوەڕم وایە کە مرۆڤ دەتوانێت دۆستایەتی بکات.',
+    '00:00:06.000 --> 00:00:10.000\nبەڵام پێویستە ئەو کەسە ڕێز لە خێزانەکەت بگرێت.',
+    '00:00:12.000 --> 00:00:16.000\nئەمڕۆ ڕۆژی زەماوەندی کچەکەمە.',
+    '00:00:18.000 --> 00:00:22.000\nدەمەوێت ئەو ڕۆژە بێ ئاژاوە و کێشە بێت.',
+  ],
+  '680': [ // Pulp Fiction
+    '00:00:01.000 --> 00:00:04.000\nڕۆیالی لەگەڵ پەنیر چییە؟',
+    '00:00:05.000 --> 00:00:08.000\nلە فەڕەنسا ناویان لێ دەنێت کوارتەر پاوندەر.',
+    '00:00:10.000 --> 00:00:13.000\nئەوان سیستەمی مەتریک بەکاردەهێنن.',
+    '00:00:15.000 --> 00:00:18.000\nنازانن پاوند چییە.',
+  ],
+  '539': [ // The Matrix
+    '00:00:01.000 --> 00:00:05.000\nئایا هەرگیز خەونێکت بینیوە کە زۆر ڕاستی لێهاتبێت؟',
+    '00:00:06.000 --> 00:00:10.000\nئەگەر نەتتوانیبێت لە خەون و ڕاستی جیاوازی بکەیت چی؟',
+    '00:00:12.000 --> 00:00:16.000\nماتریکس لە هەموو شوێنێکەوە دەورەتە دەگرێت.',
+    '00:00:18.000 --> 00:00:22.000\nدەتوانیت هەستی پێ بکەیت کاتێک چاوت دادەخەیت.',
+  ],
+};
+
+// Movie metadata for subtitle generation context
+const movieMetadata: Record<string, { title: string; genre: string; year: number; plot: string }> = {
+  '550': {
+    title: 'Fight Club',
+    genre: 'Drama/Thriller',
+    year: 1999,
+    plot: 'An insomniac office worker forms an underground fight club',
+  },
+  '238': {
+    title: 'The Godfather',
+    genre: 'Crime/Drama', 
+    year: 1972,
+    plot: 'The aging patriarch of an organized crime dynasty',
+  },
+  '680': {
+    title: 'Pulp Fiction',
+    genre: 'Crime/Drama',
+    year: 1994,
+    plot: 'The lives of two mob hitmen intertwine',
+  },
+  '539': {
+    title: 'The Matrix',
+    genre: 'Sci-Fi/Action',
+    year: 1999,
+    plot: 'A computer hacker learns reality is a simulation',
+  },
+};
+
+// Generate fallback Kurdish subtitles based on movie genre/plot
+function generateFallbackSubtitles(movieId: string): string[] {
+  const metadata = movieMetadata[movieId];
+  
+  if (!metadata) {
+    return [
+      '00:00:01.000 --> 00:00:04.000\nبەخێربێیت بۆ ئەم فیلمە.',
+      '00:00:05.000 --> 00:00:08.000\nئەمە چیرۆکێکی سەرنجڕاکێشە.',
+      '00:00:10.000 --> 00:00:13.000\nکارەکتەرەکان دەست بە گفتوگۆ دەکەن.',
+      '00:00:15.000 --> 00:00:18.000\nڕووداوەکان دەست پێ دەکەن.',
+      '00:00:20.000 --> 00:00:23.000\nچیرۆک درام و سەرنج پێشکەش دەکات.',
+    ];
+  }
+
+  const { genre } = metadata;
+  
+  if (genre.includes('Action')) {
+    return [
+      '00:00:01.000 --> 00:00:04.000\nئەکشن و سەرنجی زۆر!',
+      '00:00:05.000 --> 00:00:08.000\nپاڵەوانەکە ئامادەیە بۆ شەڕ.',
+      '00:00:10.000 --> 00:00:13.000\nهێرش و بەرگریی بەهێز.',
+      '00:00:15.000 --> 00:00:18.000\nڕکابەری نێوان چاک و خراپ.',
+      '00:00:20.000 --> 00:00:23.000\nدەرەنجامی شەڕەکە ڕوون دەبێتەوە.',
+    ];
+  }
+  
+  if (genre.includes('Crime')) {
+    return [
+      '00:00:01.000 --> 00:00:04.000\nجیهانی تاریکی تاوان.',
+      '00:00:05.000 --> 00:00:08.000\nیاسا و نیزام لە مەترسیدایە.',
+      '00:00:10.000 --> 00:00:13.000\nکارەکتەرەکان لە ناو کێشەدان.',
+      '00:00:15.000 --> 00:00:18.000\nڕاستی و درۆ تێکەڵاون.',
+      '00:00:20.000 --> 00:00:23.000\nدادپەروەری بە دوای تاواندا دەگەڕێت.',
+    ];
+  }
+  
+  if (genre.includes('Sci-Fi')) {
+    return [
+      '00:00:01.000 --> 00:00:04.000\nداهاتوویەکی نهێنی.',
+      '00:00:05.000 --> 00:00:08.000\nتەکنەلۆژیا ژیان گۆڕیوە.',
+      '00:00:10.000 --> 00:00:13.000\nڕاستی لە خەیاڵ جیاوازتر نییە.',
+      '00:00:15.000 --> 00:00:18.000\nکەشف و دۆزینەوەی سەیر.',
+      '00:00:20.000 --> 00:00:23.000\nداهاتوو لە دەستی ئێمەیە.',
+    ];
+  }
+  
+  // Default drama subtitles
+  return [
+    '00:00:01.000 --> 00:00:04.000\nچیرۆکێکی مرۆیی قووڵ.',
+    '00:00:05.000 --> 00:00:08.000\nکارەکتەرەکان بە دوای ئامانجەکانیاندا دەگەڕێن.',
+    '00:00:10.000 --> 00:00:13.000\nهەست و سۆز لە ناوەڕاست.',
+    '00:00:15.000 --> 00:00:18.000\nژیان پڕە لە هەڵوێست.',
+    '00:00:20.000 --> 00:00:23.000\nفێربوون لە ئەزموون.',
+  ];
+}
+
+// Format subtitles as WebVTT
+function formatAsWebVTT(subtitles: string[]): string {
+  const header = 'WEBVTT\n\n';
+  return header + subtitles.map((s, i) => `${i + 1}\n${s}\n`).join('\n');
+}
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const movieId = params.id;
+    
+    if (!movieId || movieId.trim().length === 0 || movieId.length > 50) {
+      return NextResponse.json(
+        { error: 'Invalid movie ID format' },
+        { status: 400 }
+      );
+    }
+
+    const subtitles = sampleSubtitles[movieId] || generateFallbackSubtitles(movieId);
+    const vttContent = formatAsWebVTT(subtitles);
+
+    return new NextResponse(vttContent, {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/vtt; charset=utf-8',
+        'Content-Disposition': `attachment; filename="kurdish-${movieId}.vtt"`,
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Cache-Control': 'public, max-age=86400',
+      },
+    });
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Failed to generate subtitles' },
+      { status: 500 }
+    );
+  }
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
+}

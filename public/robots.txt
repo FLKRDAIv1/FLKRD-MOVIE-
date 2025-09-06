@@ -1,0 +1,58 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://flkrd.com/sitemap.xml
+
+# Crawl optimization
+Crawl-delay: 1
+
+# Disallow non-essential paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Allow important pages
+Allow: /
+Allow: /movies/*
+Allow: /search
+Allow: /genres/*
+Allow: /trending
+Allow: /watchlist
+Allow: /profile
+
+# Block duplicate content and session URLs
+Disallow: /*?sessionid=*
+Disallow: /*?sid=*
+Disallow: /*&sessionid=*
+Disallow: /*&sid=*
+
+# Block temporary and cache files
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /.well-known/
+
+# Special bot instructions
+User-agent: Googlebot
+Crawl-delay: 1
+Allow: /
+
+User-agent: Bingbot
+Crawl-delay: 2
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Host directive (canonical domain)
+Host: https://flkrd.com

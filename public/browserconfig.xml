@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg"/>
+            <square150x150logo src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg"/>
+            <wide310x150logo src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg"/>
+            <square310x310logo src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/735a2959-da91-4320-9442-c926d9386954/generated_images/modern-3d-metallic-app-icon-for-flkrd-mo-b2e0e91e-20250905082424.jpg"/>
+            <TileColor>#e50914</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>
